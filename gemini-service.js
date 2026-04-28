@@ -7,6 +7,10 @@
 const GeminiService = (() => {
     const BASE_URL = `${HEALTHAI_CONFIG.GEMINI_API_URL}${HEALTHAI_CONFIG.GEMINI_MODEL}:generateContent?key=${HEALTHAI_CONFIG.GEMINI_API_KEY}`;
 
+    // Log the URL being used (without the key) whenever the service loads
+    console.log('[GeminiService] Endpoint:', `${HEALTHAI_CONFIG.GEMINI_API_URL}${HEALTHAI_CONFIG.GEMINI_MODEL}:generateContent`);
+    console.log('[GeminiService] Model:', HEALTHAI_CONFIG.GEMINI_MODEL);
+
     async function callGemini(prompt, systemContext = '') {
         try {
             const body = {
@@ -30,14 +34,16 @@ const GeminiService = (() => {
 
             if (!response.ok) {
                 const err = await response.json();
-                console.error('Gemini API error:', err);
-                throw new Error(err.error?.message || 'Gemini API call failed');
+                const msg = err.error?.message || 'Unknown API error';
+                const status = err.error?.status || response.status;
+                console.error(`[GeminiService] API Error ${status}:`, msg, err);
+                throw new Error(`[${status}] ${msg}`);
             }
 
             const data = await response.json();
             return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
         } catch (error) {
-            console.error('GeminiService error:', error);
+            console.error('[GeminiService] Fetch error:', error.message);
             throw error;
         }
     }

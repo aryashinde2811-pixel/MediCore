@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HealthAI | Sign In</title>
     <meta name="description" content="Login or register to HealthAI — Smart Resource Allocation for Healthcare.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="login.css">
-    <script src="theme.js"></script>
 </head>
+
 <body>
 
     <!-- Animated Background -->
@@ -20,12 +22,6 @@
     </div>
 
     <div class="login-wrapper">
-
-        <div style="position:absolute; top: 20px; right: 20px; z-index: 10;">
-            <button class="icon-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
-                <i class="fas fa-moon theme-icon-indicator"></i>
-            </button>
-        </div>
 
         <!-- Brand -->
         <div class="login-brand">
@@ -53,29 +49,29 @@
 
                 <div class="role-grid">
                     <div class="role-card" id="role-patient" data-role="patient"
-                         style="--role-color:#2563EB;--role-bg:rgba(37,99,235,0.12)"
-                         onclick="selectRole('patient')" tabindex="0" aria-label="Patient role">
+                        style="--role-color:#2563EB;--role-bg:rgba(37,99,235,0.12)" onclick="selectRole('patient')"
+                        tabindex="0" aria-label="Patient role">
                         <div class="role-icon"><i class="fas fa-user"></i></div>
                         <div class="role-label">Patient</div>
                         <div class="role-desc">Book ambulance, AI triage, Med ID</div>
                     </div>
                     <div class="role-card" id="role-doctor" data-role="doctor"
-                         style="--role-color:#14B8A6;--role-bg:rgba(20,184,166,0.12)"
-                         onclick="selectRole('doctor')" tabindex="0" aria-label="Doctor role">
+                        style="--role-color:#14B8A6;--role-bg:rgba(20,184,166,0.12)" onclick="selectRole('doctor')"
+                        tabindex="0" aria-label="Doctor role">
                         <div class="role-icon"><i class="fas fa-user-md"></i></div>
                         <div class="role-label">Doctor</div>
                         <div class="role-desc">Manage schedule, emergency alerts</div>
                     </div>
                     <div class="role-card" id="role-hospital" data-role="hospital"
-                         style="--role-color:#F97316;--role-bg:rgba(249,115,22,0.12)"
-                         onclick="selectRole('hospital')" tabindex="0" aria-label="Hospital Admin role">
+                        style="--role-color:#F97316;--role-bg:rgba(249,115,22,0.12)" onclick="selectRole('hospital')"
+                        tabindex="0" aria-label="Hospital Admin role">
                         <div class="role-icon"><i class="fas fa-hospital"></i></div>
                         <div class="role-label">Hospital Admin</div>
                         <div class="role-desc">Beds, ICU, resource management</div>
                     </div>
                     <div class="role-card" id="role-admin" data-role="admin"
-                         style="--role-color:#8B5CF6;--role-bg:rgba(139,92,246,0.12)"
-                         onclick="selectRole('admin')" tabindex="0" aria-label="System Admin role">
+                        style="--role-color:#8B5CF6;--role-bg:rgba(139,92,246,0.12)" onclick="selectRole('admin')"
+                        tabindex="0" aria-label="System Admin role">
                         <div class="role-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="role-label">System Admin</div>
                         <div class="role-desc">Network-wide oversight & AI insights</div>
@@ -114,8 +110,8 @@
                         <label class="form-label">Email Address</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-envelope form-input-icon"></i>
-                            <input type="email" class="form-input" id="login-email"
-                                   placeholder="your@email.com" autocomplete="email" required>
+                            <input type="email" class="form-input" id="login-email" placeholder="your@email.com"
+                                autocomplete="email" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -123,7 +119,7 @@
                         <div class="form-input-wrap">
                             <i class="fas fa-lock form-input-icon"></i>
                             <input type="password" class="form-input" id="login-password"
-                                   placeholder="Enter your password" autocomplete="current-password" required>
+                                placeholder="Enter your password" autocomplete="current-password" required>
                             <button type="button" class="pw-toggle" onclick="togglePw('login-password', this)">
                                 <i class="fas fa-eye"></i>
                             </button>
@@ -146,7 +142,8 @@
                 <!-- ── REGISTER FORMS (role-specific) ── -->
 
                 <!-- Patient Register -->
-                <form id="register-form-patient" class="register-form" onsubmit="handleRegister(event)" style="display:none">
+                <form id="register-form-patient" class="register-form" onsubmit="handleRegister(event)"
+                    style="display:none">
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">First Name</label>
@@ -180,10 +177,14 @@
                             <label class="form-label">Blood Group</label>
                             <select class="form-input" id="r-p-blood">
                                 <option value="">Select</option>
-                                <option>A+</option><option>A−</option>
-                                <option>B+</option><option>B−</option>
-                                <option>O+</option><option>O−</option>
-                                <option>AB+</option><option>AB−</option>
+                                <option>A+</option>
+                                <option>A−</option>
+                                <option>B+</option>
+                                <option>B−</option>
+                                <option>O+</option>
+                                <option>O−</option>
+                                <option>AB+</option>
+                                <option>AB−</option>
                             </select>
                         </div>
                     </div>
@@ -191,13 +192,16 @@
                         <label class="form-label">Password</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-lock form-input-icon"></i>
-                            <input type="password" class="form-input" id="r-p-pw" placeholder="Create a password" required>
-                            <button type="button" class="pw-toggle" onclick="togglePw('r-p-pw', this)"><i class="fas fa-eye"></i></button>
+                            <input type="password" class="form-input" id="r-p-pw" placeholder="Create a password"
+                                required>
+                            <button type="button" class="pw-toggle" onclick="togglePw('r-p-pw', this)"><i
+                                    class="fas fa-eye"></i></button>
                         </div>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" id="r-p-terms" required>
-                        <label for="r-p-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                        <label for="r-p-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                                Policy</a></label>
                     </div>
                     <button type="submit" class="btn-submit role-patient">
                         <i class="fas fa-user-plus"></i> Create Patient Account
@@ -205,7 +209,8 @@
                 </form>
 
                 <!-- Doctor Register -->
-                <form id="register-form-doctor" class="register-form" onsubmit="handleRegister(event)" style="display:none">
+                <form id="register-form-doctor" class="register-form" onsubmit="handleRegister(event)"
+                    style="display:none">
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">First Name</label>
@@ -220,17 +225,22 @@
                         <label class="form-label">Email</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-envelope form-input-icon"></i>
-                            <input type="email" class="form-input" id="r-d-email" placeholder="dr.your@hospital.com" required>
+                            <input type="email" class="form-input" id="r-d-email" placeholder="dr.your@hospital.com"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Specialization</label>
                         <select class="form-input" id="r-d-spec" required>
                             <option value="">Choose specialization</option>
-                            <option>Cardiologist</option><option>Neurologist</option>
-                            <option>Orthopedic</option><option>Pediatrician</option>
-                            <option>General Surgeon</option><option>Emergency Medicine</option>
-                            <option>Anesthesiologist</option><option>Pulmonologist</option>
+                            <option>Cardiologist</option>
+                            <option>Neurologist</option>
+                            <option>Orthopedic</option>
+                            <option>Pediatrician</option>
+                            <option>General Surgeon</option>
+                            <option>Emergency Medicine</option>
+                            <option>Anesthesiologist</option>
+                            <option>Pulmonologist</option>
                         </select>
                     </div>
                     <div class="form-row">
@@ -254,8 +264,10 @@
                         <label class="form-label">Password</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-lock form-input-icon"></i>
-                            <input type="password" class="form-input" id="r-d-pw" placeholder="Create a password" required>
-                            <button type="button" class="pw-toggle" onclick="togglePw('r-d-pw', this)"><i class="fas fa-eye"></i></button>
+                            <input type="password" class="form-input" id="r-d-pw" placeholder="Create a password"
+                                required>
+                            <button type="button" class="pw-toggle" onclick="togglePw('r-d-pw', this)"><i
+                                    class="fas fa-eye"></i></button>
                         </div>
                     </div>
                     <button type="submit" class="btn-submit role-doctor">
@@ -264,7 +276,8 @@
                 </form>
 
                 <!-- Hospital Admin Register -->
-                <form id="register-form-hospital" class="register-form" onsubmit="handleRegister(event)" style="display:none">
+                <form id="register-form-hospital" class="register-form" onsubmit="handleRegister(event)"
+                    style="display:none">
                     <div class="form-group">
                         <label class="form-label">Administrator Name</label>
                         <div class="form-input-wrap">
@@ -276,14 +289,16 @@
                         <label class="form-label">Email</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-envelope form-input-icon"></i>
-                            <input type="email" class="form-input" id="r-h-email" placeholder="admin@hospital.com" required>
+                            <input type="email" class="form-input" id="r-h-email" placeholder="admin@hospital.com"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Hospital Name</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-hospital form-input-icon"></i>
-                            <input type="text" class="form-input" id="r-h-hospital" placeholder="City General Hospital" required>
+                            <input type="text" class="form-input" id="r-h-hospital" placeholder="City General Hospital"
+                                required>
                         </div>
                     </div>
                     <div class="form-row">
@@ -307,8 +322,10 @@
                         <label class="form-label">Password</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-lock form-input-icon"></i>
-                            <input type="password" class="form-input" id="r-h-pw" placeholder="Create a password" required>
-                            <button type="button" class="pw-toggle" onclick="togglePw('r-h-pw', this)"><i class="fas fa-eye"></i></button>
+                            <input type="password" class="form-input" id="r-h-pw" placeholder="Create a password"
+                                required>
+                            <button type="button" class="pw-toggle" onclick="togglePw('r-h-pw', this)"><i
+                                    class="fas fa-eye"></i></button>
                         </div>
                     </div>
                     <button type="submit" class="btn-submit role-hospital">
@@ -317,7 +334,8 @@
                 </form>
 
                 <!-- System Admin Register -->
-                <form id="register-form-admin" class="register-form" onsubmit="handleRegister(event)" style="display:none">
+                <form id="register-form-admin" class="register-form" onsubmit="handleRegister(event)"
+                    style="display:none">
                     <div class="form-group">
                         <label class="form-label">Full Name</label>
                         <div class="form-input-wrap">
@@ -329,23 +347,28 @@
                         <label class="form-label">Email</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-envelope form-input-icon"></i>
-                            <input type="email" class="form-input" id="r-a-email" placeholder="sysadmin@healthai.com" required>
+                            <input type="email" class="form-input" id="r-a-email" placeholder="sysadmin@healthai.com"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">System Admin Key</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-shield-alt form-input-icon"></i>
-                            <input type="password" class="form-input" id="r-a-key" placeholder="HAI-SYS-ADMIN-KEY" required>
-                            <button type="button" class="pw-toggle" onclick="togglePw('r-a-key', this)"><i class="fas fa-eye"></i></button>
+                            <input type="password" class="form-input" id="r-a-key" placeholder="HAI-SYS-ADMIN-KEY"
+                                required>
+                            <button type="button" class="pw-toggle" onclick="togglePw('r-a-key', this)"><i
+                                    class="fas fa-eye"></i></button>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Password</label>
                         <div class="form-input-wrap">
                             <i class="fas fa-lock form-input-icon"></i>
-                            <input type="password" class="form-input" id="r-a-pw" placeholder="Create a password" required>
-                            <button type="button" class="pw-toggle" onclick="togglePw('r-a-pw', this)"><i class="fas fa-eye"></i></button>
+                            <input type="password" class="form-input" id="r-a-pw" placeholder="Create a password"
+                                required>
+                            <button type="button" class="pw-toggle" onclick="togglePw('r-a-pw', this)"><i
+                                    class="fas fa-eye"></i></button>
                         </div>
                     </div>
                     <button type="submit" class="btn-submit role-admin">
@@ -370,21 +393,21 @@
     <script>
         // ── Demo Credentials per role ──
         const DEMO_CREDS = {
-            patient:  { email: 'patient@healthai.com',  password: 'demo123', name: 'Arjun Sharma' },
-            doctor:   { email: 'doctor@healthai.com',   password: 'demo123', name: 'Dr. Rajesh Sharma' },
+            patient: { email: 'patient@healthai.com', password: 'demo123', name: 'Arjun Sharma' },
+            doctor: { email: 'doctor@healthai.com', password: 'demo123', name: 'Dr. Rajesh Sharma' },
             hospital: { email: 'hospital@healthai.com', password: 'demo123', name: 'Dr. Anjali Rao' },
-            admin:    { email: 'admin@healthai.com',    password: 'demo123', name: 'Sunil Arora' },
+            admin: { email: 'admin@healthai.com', password: 'demo123', name: 'Sunil Arora' },
         };
 
         const ROLE_META = {
-            patient:  { label: 'Patient',        color: '#2563EB',  icon: 'fa-user' },
-            doctor:   { label: 'Doctor',          color: '#14B8A6',  icon: 'fa-user-md' },
-            hospital: { label: 'Hospital Admin',  color: '#F97316',  icon: 'fa-hospital' },
-            admin:    { label: 'System Admin',    color: '#8B5CF6',  icon: 'fa-shield-alt' },
+            patient: { label: 'Patient', color: '#2563EB', icon: 'fa-user' },
+            doctor: { label: 'Doctor', color: '#14B8A6', icon: 'fa-user-md' },
+            hospital: { label: 'Hospital Admin', color: '#F97316', icon: 'fa-hospital' },
+            admin: { label: 'System Admin', color: '#8B5CF6', icon: 'fa-shield-alt' },
         };
 
         let currentRole = null;
-        let currentTab  = 'login';
+        let currentTab = 'login';
 
         // Redirect if already logged in
         if (HealthAIAuth.isLoggedIn()) {
@@ -439,9 +462,9 @@
             currentTab = tab;
             const loginForm = document.getElementById('login-form');
             const regFormId = 'register-form-' + currentRole;
-            const regForm  = document.getElementById(regFormId);
+            const regForm = document.getElementById(regFormId);
 
-            const tabLogin    = document.getElementById('tab-login');
+            const tabLogin = document.getElementById('tab-login');
             const tabRegister = document.getElementById('tab-register');
 
             if (tab === 'login') {
@@ -465,7 +488,7 @@
         function fillDemo() {
             const creds = DEMO_CREDS[currentRole];
             if (!creds) return;
-            document.getElementById('login-email').value    = creds.email;
+            document.getElementById('login-email').value = creds.email;
             document.getElementById('login-password').value = creds.password;
             // Animate
             const btn = document.getElementById('demo-btn');
@@ -501,12 +524,12 @@
         }
 
         function setLoading(on) {
-            const btn  = document.getElementById('login-submit-btn');
+            const btn = document.getElementById('login-submit-btn');
             const spin = document.getElementById('login-spinner');
-            const txt  = document.getElementById('login-btn-text');
+            const txt = document.getElementById('login-btn-text');
             btn.disabled = on;
             spin.style.display = on ? 'block' : 'none';
-            txt.style.display  = on ? 'none' : 'flex';
+            txt.style.display = on ? 'none' : 'flex';
         }
 
         // ── Handle Login ──
@@ -514,7 +537,7 @@
             e.preventDefault();
             clearMsg();
             const email = document.getElementById('login-email').value.trim();
-            const pw    = document.getElementById('login-password').value;
+            const pw = document.getElementById('login-password').value;
 
             if (!email || !pw) { showMsg('Please fill in all fields.'); return; }
 
@@ -556,24 +579,23 @@
             let name = '', email = '';
             switch (currentRole) {
                 case 'patient':
-                    name  = `${document.getElementById('r-p-fname').value} ${document.getElementById('r-p-lname').value}`.trim();
+                    name = `${document.getElementById('r-p-fname').value} ${document.getElementById('r-p-lname').value}`.trim();
                     email = document.getElementById('r-p-email').value.trim();
                     break;
                 case 'doctor':
-                    name  = `Dr. ${document.getElementById('r-d-fname').value} ${document.getElementById('r-d-lname').value}`.trim();
+                    name = `Dr. ${document.getElementById('r-d-fname').value} ${document.getElementById('r-d-lname').value}`.trim();
                     email = document.getElementById('r-d-email').value.trim();
                     break;
                 case 'hospital':
-                    name  = document.getElementById('r-h-name').value.trim();
+                    name = document.getElementById('r-h-name').value.trim();
                     email = document.getElementById('r-h-email').value.trim();
                     break;
                 case 'admin':
-                    name  = document.getElementById('r-a-name').value.trim();
+                    name = document.getElementById('r-a-name').value.trim();
                     email = document.getElementById('r-a-email').value.trim();
                     break;
             }
             if (!name || !email) { showMsg('Please complete all required fields.'); return; }
-
             showMsg('✓ Account created! Signing you in…', 'success');
             setTimeout(() => {
                 HealthAIAuth.setUser(currentRole, name, email);
@@ -592,4 +614,6 @@
         });
     </script>
 </body>
+
 </html>
+

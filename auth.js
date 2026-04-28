@@ -67,7 +67,7 @@
         },
 
         /**
-         * Guard a page — redirect to login if user not in allowedRoles.
+         * Guard a page â€” redirect to login if user not in allowedRoles.
          * Pass empty array [] to allow any logged-in user.
          */
         guardPage(allowedRoles = []) {
