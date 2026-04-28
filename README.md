@@ -56,15 +56,15 @@ These inefficiencies can impact patient outcomes and hospital performance.
 ## 🛠 Tech Stack
 
 * **Frontend:** React.js / HTML / CSS / JavaScript
-* **Design:** UI-focused prototype
-* **Data Handling:** Static / simulated data
+* **Deployment** Google Firebase
+* **API** - Google AI Studio
 
 ---
 
 ## 📁 Project Structure
 
 ```id="yo9t1h"
-HealthAI/
+MediCore/
 │── src/             # Main frontend source code
 │── public/          # Static assets
 │── package.json
@@ -78,8 +78,8 @@ HealthAI/
 ### 1️⃣ Clone the Repository
 
 ```bash id="phz2qp"
-git clone https://github.com/aryashinde2811-pixel/HealthAI.git
-cd HealthAI
+git clone https://github.com/aryashinde2811-pixel/MediCore.git
+cd MediCore
 ```
 
 ---
