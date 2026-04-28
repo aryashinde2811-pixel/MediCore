@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthAI | Smart Healthcare Resource Allocation System</title>
+<<<<<<< HEAD
     <meta name="description" content="AI-powered healthcare resource allocation system that optimizes hospital beds, ICU units, and ambulance dispatch in real-time.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/shared.css">
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
+=======
+    <meta name="description"
+        content="AI-powered healthcare resource allocation system that optimizes hospital beds, ICU units, and ambulance dispatch in real-time.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+
+>>>>>>> origin/main
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -25,9 +44,20 @@
                 <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#about" class="nav-link">About</a>
             </div>
+<<<<<<< HEAD
             <div class="nav-actions">
                 <a href="patient.html" class="btn btn-outline">Patient Portal</a>
                 <a href="admin-dashboard.html" class="btn btn-primary">Admin Dashboard</a>
+=======
+            <div class="nav-actions" id="nav-actions">
+                <button class="icon-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <i class="fas fa-moon theme-icon-indicator"></i>
+                </button>
+                <!-- Filled dynamically by auth.js -->
+                <a href="login.html" class="btn btn-primary" id="nav-login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+>>>>>>> origin/main
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
@@ -55,6 +85,7 @@
                     System
                 </h1>
                 <p class="hero-subtitle">
+<<<<<<< HEAD
                     Revolutionizing emergency response with real-time AI optimization. 
                     Connecting patients to the right care, at the right time — saving lives through intelligent resource management.
                 </p>
@@ -64,6 +95,19 @@
                         Get Started
                     </a>
                     <a href="admin-dashboard.html" class="btn btn-glass btn-lg" id="view-dashboard-btn">
+=======
+                    Revolutionizing emergency response with real-time AI optimization.
+                    Connecting patients to the right care, at the right time — saving lives through intelligent resource
+                    management.
+                </p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary btn-lg pulse-btn" id="get-started-btn"
+                        onclick="handleHeroStart(event)">
+                        <i class="fas fa-play-circle"></i>
+                        Get Started
+                    </a>
+                    <a href="#" class="btn btn-glass btn-lg" id="view-dashboard-btn" onclick="handleViewDash(event)">
+>>>>>>> origin/main
                         <i class="fas fa-chart-line"></i>
                         View Dashboard
                     </a>
@@ -118,7 +162,11 @@
                                     <div class="mini-val">3</div>
                                     <div class="mini-label">Critical Alerts</div>
                                 </div>
+<<<<<<< HEAD
             </div>
+=======
+                            </div>
+>>>>>>> origin/main
                         </div>
                         <div class="preview-chart-area">
                             <div class="chart-label">Patient Inflow Today</div>
@@ -146,9 +194,18 @@
                                 <i class="fas fa-ambulance"></i>
                             </div>
                             <svg class="map-lines" viewBox="0 0 300 150">
+<<<<<<< HEAD
                                 <line x1="60" y1="50" x2="200" y2="80" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
                                 <line x1="200" y1="80" x2="240" y2="110" stroke="#14B8A6" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.5"/>
                                 <line x1="60" y1="50" x2="240" y2="110" stroke="#F97316" stroke-width="1" stroke-dasharray="3,4" opacity="0.4"/>
+=======
+                                <line x1="60" y1="50" x2="200" y2="80" stroke="#2563EB" stroke-width="1.5"
+                                    stroke-dasharray="5,3" opacity="0.5" />
+                                <line x1="200" y1="80" x2="240" y2="110" stroke="#14B8A6" stroke-width="1.5"
+                                    stroke-dasharray="5,3" opacity="0.5" />
+                                <line x1="60" y1="50" x2="240" y2="110" stroke="#F97316" stroke-width="1"
+                                    stroke-dasharray="3,4" opacity="0.4" />
+>>>>>>> origin/main
                             </svg>
                         </div>
                     </div>
@@ -168,8 +225,15 @@
         <div class="section-container">
             <div class="section-header">
                 <span class="section-tag">Why HealthAI</span>
+<<<<<<< HEAD
                 <h2 class="section-title">Built for the Future of <span class="gradient-text">Emergency Healthcare</span></h2>
                 <p class="section-subtitle">Our platform combines cutting-edge AI with real-time data to ensure every second counts when lives are on the line.</p>
+=======
+                <h2 class="section-title">Built for the Future of <span class="gradient-text">Emergency
+                        Healthcare</span></h2>
+                <p class="section-subtitle">Our platform combines cutting-edge AI with real-time data to ensure every
+                    second counts when lives are on the line.</p>
+>>>>>>> origin/main
             </div>
             <div class="features-grid">
                 <div class="feature-card" id="feature-tracking">
@@ -177,7 +241,12 @@
                         <i class="fas fa-satellite-dish"></i>
                     </div>
                     <h3>Real-Time Tracking</h3>
+<<<<<<< HEAD
                     <p>Live GPS tracking of ambulances, hospital occupancy, and resource availability updated every 5 seconds.</p>
+=======
+                    <p>Live GPS tracking of ambulances, hospital occupancy, and resource availability updated every 5
+                        seconds.</p>
+>>>>>>> origin/main
                     <div class="feature-highlight">
                         <span class="live-dot"></span>
                         <span>Updated Live</span>
@@ -189,7 +258,12 @@
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>AI Resource Allocation</h3>
+<<<<<<< HEAD
                     <p>Machine learning models predict demand, optimize bed allocation, and dispatch the nearest available ambulance automatically.</p>
+=======
+                    <p>Machine learning models predict demand, optimize bed allocation, and dispatch the nearest
+                        available ambulance automatically.</p>
+>>>>>>> origin/main
                     <div class="feature-metric">
                         <span>87%</span> faster allocation vs manual
                     </div>
@@ -199,7 +273,12 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h3>Emergency Response</h3>
+<<<<<<< HEAD
                     <p>One-tap emergency alerts with automatic severity assessment, nearest hospital routing, and instant ambulance dispatch.</p>
+=======
+                    <p>One-tap emergency alerts with automatic severity assessment, nearest hospital routing, and
+                        instant ambulance dispatch.</p>
+>>>>>>> origin/main
                     <div class="feature-highlight">
                         <span>Avg. response: <strong>4.2 min</strong></span>
                     </div>
@@ -209,21 +288,36 @@
                         <i class="fas fa-chart-pie"></i>
                     </div>
                     <h3>Predictive Analytics</h3>
+<<<<<<< HEAD
                     <p>Advanced dashboards with trend analysis, resource forecasting, and actionable insights for hospital administrators.</p>
+=======
+                    <p>Advanced dashboards with trend analysis, resource forecasting, and actionable insights for
+                        hospital administrators.</p>
+>>>>>>> origin/main
                 </div>
                 <div class="feature-card" id="feature-multi">
                     <div class="feature-icon red">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Multi-Role Platform</h3>
+<<<<<<< HEAD
                     <p>Dedicated interfaces for patients, doctors, hospital admins, and system administrators — each tailored to their needs.</p>
+=======
+                    <p>Dedicated interfaces for patients, doctors, hospital admins, and system administrators — each
+                        tailored to their needs.</p>
+>>>>>>> origin/main
                 </div>
                 <div class="feature-card" id="feature-secure">
                     <div class="feature-icon green">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Secure & Compliant</h3>
+<<<<<<< HEAD
                     <p>HIPAA-compliant data handling with end-to-end encryption and full audit trails for all medical records.</p>
+=======
+                    <p>HIPAA-compliant data handling with end-to-end encryption and full audit trails for all medical
+                        records.</p>
+>>>>>>> origin/main
                 </div>
             </div>
         </div>
@@ -243,7 +337,12 @@
                     <div class="step-content">
                         <div class="step-icon"><i class="fas fa-mobile-alt"></i></div>
                         <h3>Patient Request</h3>
+<<<<<<< HEAD
                         <p>Patient triggers emergency via app or call center with one tap. Location is automatically captured.</p>
+=======
+                        <p>Patient triggers emergency via app or call center with one tap. Location is automatically
+                            captured.</p>
+>>>>>>> origin/main
                     </div>
                 </div>
                 <div class="step" id="step-2">
@@ -251,7 +350,12 @@
                     <div class="step-content">
                         <div class="step-icon"><i class="fas fa-brain"></i></div>
                         <h3>AI Processing</h3>
+<<<<<<< HEAD
                         <p>System analyzes emergency type, severity, and scans all nearby hospitals for availability in real-time.</p>
+=======
+                        <p>System analyzes emergency type, severity, and scans all nearby hospitals for availability in
+                            real-time.</p>
+>>>>>>> origin/main
                     </div>
                 </div>
                 <div class="step" id="step-3">
@@ -259,7 +363,12 @@
                     <div class="step-content">
                         <div class="step-icon"><i class="fas fa-ambulance"></i></div>
                         <h3>Smart Dispatch</h3>
+<<<<<<< HEAD
                         <p>Nearest ambulance is dispatched. Hospital is pre-notified and resources pre-allocated before arrival.</p>
+=======
+                        <p>Nearest ambulance is dispatched. Hospital is pre-notified and resources pre-allocated before
+                            arrival.</p>
+>>>>>>> origin/main
                     </div>
                 </div>
                 <div class="step" id="step-4">
@@ -267,7 +376,12 @@
                     <div class="step-content">
                         <div class="step-icon"><i class="fas fa-hospital"></i></div>
                         <h3>Seamless Care</h3>
+<<<<<<< HEAD
                         <p>Patient arrives to prepared team. All vitals, history, and records are instantly available to doctors.</p>
+=======
+                        <p>Patient arrives to prepared team. All vitals, history, and records are instantly available to
+                            doctors.</p>
+>>>>>>> origin/main
                     </div>
                 </div>
             </div>
@@ -351,6 +465,40 @@
         </div>
     </footer>
 
+<<<<<<< HEAD
     <script src="assets/js/landing.js"></script>
 </body>
 </html>
+=======
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/landing.js"></script>
+    <script>
+        // Update navbar based on auth state
+        document.addEventListener('DOMContentLoaded', () => {
+            HealthAIAuth.renderLandingNav();
+        });
+
+        function handleHeroStart(e) {
+            e.preventDefault();
+            const user = HealthAIAuth.getUser();
+            if (user) {
+                window.location.href = HealthAIAuth.getDashboard(user.role);
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+
+        function handleViewDash(e) {
+            e.preventDefault();
+            const user = HealthAIAuth.getUser();
+            if (user) {
+                window.location.href = HealthAIAuth.getDashboard(user.role);
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
+>>>>>>> origin/main

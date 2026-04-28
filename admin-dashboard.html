@@ -13,7 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/shared.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="stylesheet" href="assets/css/coming-soon.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/gemini-service.js"></script>
 </head>
 
 <body>
@@ -35,25 +41,32 @@
                     Resources</a>
                 <a href="doctor-dashboard.html" class="sidebar-link" id="sl-doctors"><i class="fas fa-user-md"></i>
                     Doctors</a>
-                <a href="#" class="sidebar-link" id="sl-analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="map.html" class="sidebar-link" id="sl-map"><i class="fas fa-map-marker-alt"></i> Live Map</a>
+                <a href="#" class="sidebar-link coming-soon" id="sl-analytics"><i class="fas fa-chart-bar"></i>
+                    Analytics</a>
                 <span class="nav-section-label">Hospitals</span>
                 <a href="hospital-dashboard.html" class="sidebar-link" id="sl-hosp"><i class="fas fa-hospital"></i> City
                     General</a>
                 <a href="#" class="sidebar-link" id="sl-hosp2"><i class="fas fa-hospital"></i> Apollo Medical</a>
-                <a href="#" class="sidebar-link" id="sl-hosp3"><i class="fas fa-hospital"></i> Sunrise Trauma</a>
+                <a href="#" class="sidebar-link" id="sl-hosp3"><i class="fas fa-hospital"></i> Fortis Healthcare</a>
                 <span class="nav-section-label">System</span>
                 <a href="#" class="sidebar-link" id="sl-amb"><i class="fas fa-ambulance"></i> Ambulances</a>
+                <a href="ai-triage.html" class="sidebar-link" id="sl-triage"><i class="fas fa-brain"></i> AI Triage
+                    <span class="badge-count">AI</span></a>
                 <a href="index.html" class="sidebar-link" id="sl-home"><i class="fas fa-home"></i> Landing Page</a>
-                <a href="#" class="sidebar-link" id="sl-settings"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#" class="sidebar-link coming-soon" id="sl-settings"><i class="fas fa-cog"></i> Settings</a>
             </nav>
             <div class="sidebar-footer">
                 <div class="sidebar-user">
-                    <div class="user-avatar">SA</div>
+                    <div class="user-avatar" data-auth-avatar>SA</div>
                     <div class="user-info">
-                        <h4>Sunil Arora</h4>
-                        <p>System Administrator</p>
+                        <h4 data-auth-name>Sunil Arora</h4>
+                        <p data-auth-role>System Administrator</p>
                     </div>
                 </div>
+                <button class="sidebar-logout-btn" onclick="HealthAIAuth.logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
             </div>
         </aside>
 
@@ -62,27 +75,33 @@
             <div class="topbar">
                 <div class="topbar-left">
                     <h2>Admin Overview</h2>
-                    <p>System-wide metrics · Last updated 2 sec ago</p>
+                    <p id="topbar-time">System-wide metrics · Live</p>
                 </div>
                 <div class="topbar-right">
                     <span class="live-badge"><span class="live-pulse"></span>LIVE</span>
+                    <button class="icon-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <i class="fas fa-moon theme-icon-indicator"></i>
+                    </button>
                     <button class="icon-btn alert-btn" aria-label="Notifications">
                         <i class="fas fa-bell"></i>
                         <div class="notif-dot"></div>
                     </button>
-                    <button class="btn btn-primary btn-sm" id="generate-report"><i class="fas fa-download"></i> Export
-                        Report</button>
+                    <a href="map.html" class="btn btn-sm" style="background:var(--secondary);color:white">
+                        <i class="fas fa-map-marker-alt"></i> Live Map
+                    </a>
+                    <button class="btn btn-primary btn-sm coming-soon" id="generate-report"><i
+                            class="fas fa-download"></i> Export</button>
                 </div>
             </div>
 
             <div class="page-content">
 
-                <!-- OVERVIEW METRICS (4 big) -->
+                <!-- OVERVIEW METRICS (4 big) — live animated -->
                 <div class="admin-metrics">
                     <div class="metric-card">
                         <div class="metric-icon blue"><i class="fas fa-users"></i></div>
                         <div class="metric-info">
-                            <div class="metric-value">3,847</div>
+                            <div class="metric-value" id="m-patients">1,847</div>
                             <div class="metric-label">Total Patients Today</div>
                             <div class="metric-change up"><i class="fas fa-arrow-up"></i> +12% from yesterday</div>
                         </div>
@@ -90,27 +109,48 @@
                     <div class="metric-card">
                         <div class="metric-icon red"><i class="fas fa-exclamation-circle"></i></div>
                         <div class="metric-info">
-                            <div class="metric-value">24</div>
+                            <div class="metric-value" id="m-emergency">34</div>
                             <div class="metric-label">Active Emergency Cases</div>
-                            <div class="metric-change down"><i class="fas fa-arrow-down"></i> -3 from 1hr ago</div>
+                            <div class="metric-change down" id="m-emergency-change"><i class="fas fa-arrow-down"></i> -3
+                                from 1hr ago</div>
                         </div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-icon orange"><i class="fas fa-ambulance"></i></div>
                         <div class="metric-info">
-                            <div class="metric-value">48</div>
-                            <div class="metric-label">Ambulances Deployed</div>
-                            <div class="metric-change up"><i class="fas fa-arrow-up"></i> 94% operational</div>
+                            <div class="metric-value" id="m-response">6.2m</div>
+                            <div class="metric-label">Avg Response Time</div>
+                            <div class="metric-change up" id="m-response-change"><i class="fas fa-arrow-up"></i> Target:
+                                &lt;5 min</div>
                         </div>
                     </div>
                     <div class="metric-card">
                         <div class="metric-icon teal"><i class="fas fa-hospital"></i></div>
                         <div class="metric-info">
-                            <div class="metric-value">12</div>
-                            <div class="metric-label">Hospitals Connected</div>
-                            <div class="metric-change up"><i class="fas fa-arrow-up"></i> All systems live</div>
+                            <div class="metric-value" id="m-util">74%</div>
+                            <div class="metric-label">Resource Utilization</div>
+                            <div class="metric-change up"><i class="fas fa-arrow-up"></i> 5 hospitals online</div>
                         </div>
                     </div>
+                </div>
+
+                <!-- AI Triage Banner -->
+                <div
+                    style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.05));border:1px solid rgba(99,102,241,0.2);border-radius:var(--radius-lg);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;">
+                    <div style="display:flex;align-items:center;gap:14px">
+                        <div
+                            style="width:42px;height:42px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight:700;font-size:0.9rem">Gemini AI is Active</div>
+                            <div style="font-size:0.78rem;color:var(--text-muted)"><span id="ai-triage-count">287</span>
+                                triage assessments completed today · 23% faster ER intake</div>
+                        </div>
+                    </div>
+                    <a href="ai-triage.html" class="btn btn-sm"
+                        style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white"><i
+                            class="fas fa-brain"></i> Open AI Triage</a>
                 </div>
 
                 <!-- CHARTS ROW -->
@@ -267,52 +307,53 @@
                         </table>
                     </div>
 
-                    <!-- AI INSIGHTS -->
+                    <!-- AI INSIGHTS — Gemini powered -->
                     <div class="dash-card" id="ai-insights-card">
                         <div class="section-head">
                             <div>
                                 <h3>AI Insights</h3>
-                                <p>Smart recommendations</p>
+                                <p>Powered by Gemini 1.5 Flash</p>
                             </div>
                             <div class="ai-badge">
-                                <i class="fas fa-brain"></i> Powered by AI
+                                <i class="fas fa-brain"></i> Gemini
                             </div>
                         </div>
 
-                        <div class="ai-insight">
-                            <div class="insight-icon red">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div class="insight-body">
-                                <h4>ICU Bottleneck Predicted</h4>
-                                <p>City General ICU will reach 100% capacity in ~2.3 hours based on current inflow.
-                                    Transfer 4 stable patients to Apollo Medical.</p>
-                                <button class="btn btn-primary btn-sm" style="margin-top:8px">Auto-Redirect →</button>
-                            </div>
-                        </div>
+                        <!-- Generate button -->
+                        <button id="generate-insights-btn" onclick="generateLiveInsights()"
+                            class="btn btn-primary btn-block" style="margin-bottom:14px">
+                            <i class="fas fa-magic"></i> Generate AI Insights
+                        </button>
 
-                        <div class="ai-insight">
-                            <div class="insight-icon orange">
-                                <i class="fas fa-ambulance"></i>
+                        <div id="insights-container">
+                            <div class="ai-insight">
+                                <div class="insight-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="insight-body">
+                                    <h4>ICU Bottleneck Predicted</h4>
+                                    <p>Fortis Healthcare ICU is at 96% capacity. Transfer stable patients to Apollo
+                                        Multispeciality (ICU at 57%).</p>
+                                    <button class="btn btn-primary btn-sm" style="margin-top:8px">Auto-Redirect
+                                        →</button>
+                                </div>
                             </div>
-                            <div class="insight-body">
-                                <h4>Ambulance Rebalancing</h4>
-                                <p>High demand detected in Sector 12-15. Deploy 2 additional ambulances from Sunrise
-                                    base to cover the northeast zone.</p>
-                                <button class="btn btn-sm"
-                                    style="margin-top:8px;background:var(--accent-bg);color:var(--accent)">Deploy
-                                    Now</button>
+                            <div class="ai-insight">
+                                <div class="insight-icon orange"><i class="fas fa-ambulance"></i></div>
+                                <div class="insight-body">
+                                    <h4>Ambulance Rebalancing</h4>
+                                    <p>High demand in Sector 12-15. Redeploy 2 ambulances from Max Super Specialty (6
+                                        available) to cover northeast zone.</p>
+                                    <button class="btn btn-sm"
+                                        style="margin-top:8px;background:var(--accent-bg);color:var(--accent)">Deploy
+                                        Now</button>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="ai-insight">
-                            <div class="insight-icon teal">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="insight-body">
-                                <h4>Weekend Peak Forecast</h4>
-                                <p>Historical data shows 34% higher emergency cases on Sunday evenings. Pre-allocate 15
-                                    beds as buffer capacity.</p>
+                            <div class="ai-insight">
+                                <div class="insight-icon teal"><i class="fas fa-chart-line"></i></div>
+                                <div class="insight-body">
+                                    <h4>Weekend Peak Forecast</h4>
+                                    <p>Historical data shows 34% higher emergency cases on Sunday evenings. Pre-allocate
+                                        15 buffer beds and schedule extra staff.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -404,11 +445,43 @@
             margin-top: 4px;
             line-height: 1.5;
         }
+
+        /* AI insight loading state */
+        .insight-loading {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+        }
+
+        .insight-loading .spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid var(--border);
+            border-top-color: var(--purple);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        #ai-triage-count {
+            font-weight: 700;
+            color: var(--primary);
+        }
     </style>
 
-    <script src="/assets/js/dashboard.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            HealthAIAuth.guardPage(['admin']);
+            HealthAIAuth.injectUserUI();
+            HealthAIAuth.initMobileSidebar();
 
             // Line Chart — Patient Inflow
             const inflowCtx = document.getElementById('inflowChart').getContext('2d');
@@ -476,7 +549,60 @@
                 }
             });
         });
+
+        // ── Live Metric Updates ──────────────────────────────────────────────
+        function updateMetrics() {
+            const m = HealthAIData.systemMetrics;
+            document.getElementById('m-patients').textContent = m.totalPatients.toLocaleString();
+            document.getElementById('m-emergency').textContent = m.emergenciesToday;
+            document.getElementById('m-response').textContent = m.avgResponseTime + 'm';
+            document.getElementById('m-util').textContent = m.resourceUtilization + '%';
+            document.getElementById('ai-triage-count').textContent = m.aiTriagesCompleted;
+
+            const now = new Date();
+            document.getElementById('topbar-time').textContent =
+                `Last updated ${now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })} · Live`;
+        }
+
+        HealthAIData.startSimulation(8000);
+        window.addEventListener('healthai-data-updated', updateMetrics);
+        updateMetrics();
+
+        // ── Gemini AI Insights ───────────────────────────────────────────────
+        async function generateLiveInsights() {
+            const btn = document.getElementById('generate-insights-btn');
+            const container = document.getElementById('insights-container');
+
+            btn.disabled = true;
+            btn.innerHTML = '<div class="spinner-inline"></div> Asking Gemini...';
+            container.innerHTML = '<div class="insight-loading"><div class="spinner"></div><p>Gemini is analyzing current system data...</p></div>';
+
+            try {
+                const insights = await GeminiService.generateAdminInsights({
+                    ...HealthAIData.systemMetrics,
+                    criticalHospitals: HealthAIData.hospitals.filter(h => h.status === 'critical').length
+                });
+
+                const icons = ['exclamation-triangle red', 'ambulance orange', 'chart-line teal', 'lightbulb orange'];
+                container.innerHTML = insights.map((ins, i) => {
+                    const [icon, color] = icons[i % icons.length].split(' ');
+                    return `
+                    <div class="ai-insight">
+                        <div class="insight-icon ${color}"><i class="fas fa-${icon}"></i></div>
+                        <div class="insight-body"><p>${ins}</p></div>
+                    </div>`;
+                }).join('');
+            } catch (e) {
+                container.innerHTML = '<div class="ai-insight"><div class="insight-body"><p style="color:var(--alert)">Failed to generate insights. Please try again.</p></div></div>';
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-magic"></i> Regenerate Insights';
+            }
+        }
+        window.generateLiveInsights = generateLiveInsights;
     </script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/coming-soon.js"></script>
 </body>
 
 </html>

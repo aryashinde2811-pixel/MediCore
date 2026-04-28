@@ -9,7 +9,7 @@
     gap: 14px;
     padding: 14px 20px;
     background: linear-gradient(135deg, #FFF7ED, #FEF3C7);
-    border: 1px solid rgba(249,115,22,0.3);
+    border: 1px solid rgba(249, 115, 22, 0.3);
     border-left: 4px solid var(--accent);
     border-radius: var(--radius-lg);
     margin-bottom: 24px;
@@ -75,7 +75,9 @@
     gap: 8px;
 }
 
-.resource-name i { font-size: 0.8rem; }
+.resource-name i {
+    font-size: 0.8rem;
+}
 
 .resource-pct {
     font-size: 0.9rem;
@@ -128,7 +130,7 @@
 
 .bar-group .bar {
     width: 100%;
-    background: linear-gradient(180deg, rgba(37,99,235,0.2), rgba(37,99,235,0.4));
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.2), rgba(37, 99, 235, 0.4));
     border-radius: 4px 4px 0 0;
     transition: height 1s ease;
 }
@@ -161,16 +163,19 @@
     transition: var(--transition);
 }
 
-.request-item:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.request-item:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
 
 .request-item.critical {
     background: linear-gradient(135deg, #FEF2F2, #fff5f5);
-    border-color: rgba(239,68,68,0.2);
+    border-color: rgba(239, 68, 68, 0.2);
 }
 
 .request-item.accepted {
     background: var(--success-bg);
-    border-color: rgba(34,197,94,0.2);
+    border-color: rgba(34, 197, 94, 0.2);
 }
 
 .req-severity {
@@ -184,13 +189,39 @@
     flex-shrink: 0;
 }
 
-.critical-sev { background: var(--alert-bg); color: var(--alert); }
-.medium-sev   { background: var(--warning-bg); color: #D97706; }
-.accepted-sev { background: var(--success-bg); color: var(--success); }
+.critical-sev {
+    background: var(--alert-bg);
+    color: var(--alert);
+}
 
-.req-info { flex: 1; min-width: 0; }
-.req-info h4 { font-size: 0.875rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.req-info p  { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.medium-sev {
+    background: var(--warning-bg);
+    color: #D97706;
+}
+
+.accepted-sev {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.req-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.req-info h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.req-info p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
 
 .req-meta {
     display: flex;
@@ -201,7 +232,10 @@
     margin-top: 5px;
 }
 
-.req-meta i { font-size: 0.65rem; color: var(--primary); }
+.req-meta i {
+    font-size: 0.65rem;
+    color: var(--primary);
+}
 
 .req-actions {
     display: flex;
@@ -210,10 +244,14 @@
     flex-shrink: 0;
 }
 
-.accept-btn { white-space: nowrap; }
+.accept-btn {
+    white-space: nowrap;
+}
 
 /* PATIENT TABLE */
-.table-wrap { overflow-x: auto; }
+.table-wrap {
+    overflow-x: auto;
+}
 
 .patient-cell {
     display: flex;
@@ -233,8 +271,15 @@
     flex-shrink: 0;
 }
 
-.patient-name { font-weight: 600; font-size: 0.875rem; }
-.patient-age  { font-size: 0.72rem; color: var(--text-muted); }
+.patient-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.patient-age {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
 
 /* ============================
    DOCTOR DASHBOARD SPECIFIC
@@ -256,11 +301,14 @@
     position: relative;
 }
 
-.appointment-card:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.appointment-card:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
 
 .appointment-card.urgent {
     background: linear-gradient(135deg, #FEF2F2, #fff5f5);
-    border-color: rgba(239,68,68,0.25);
+    border-color: rgba(239, 68, 68, 0.25);
 }
 
 .appt-time {
@@ -287,9 +335,20 @@
     flex-shrink: 0;
 }
 
-.appt-info { flex: 1; }
-.appt-info h4 { font-size: 0.875rem; font-weight: 700; }
-.appt-info p  { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+.appt-info {
+    flex: 1;
+}
+
+.appt-info h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.appt-info p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
 
 .appt-tag {
     display: flex;
@@ -300,7 +359,9 @@
     color: var(--text-muted);
 }
 
-.appt-status { flex-shrink: 0; }
+.appt-status {
+    flex-shrink: 0;
+}
 
 /* QUEUE ITEMS */
 .queue-item {
@@ -315,7 +376,9 @@
     transition: var(--transition);
 }
 
-.queue-item:hover { box-shadow: var(--shadow-sm); }
+.queue-item:hover {
+    box-shadow: var(--shadow-sm);
+}
 
 .queue-num {
     width: 28px;
@@ -331,11 +394,25 @@
     flex-shrink: 0;
 }
 
-.queue-num.urgent { background: var(--alert-bg); color: var(--alert); }
+.queue-num.urgent {
+    background: var(--alert-bg);
+    color: var(--alert);
+}
 
-.queue-info { flex: 1; }
-.queue-info h4 { font-size: 0.85rem; font-weight: 700; }
-.queue-info p  { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+.queue-info {
+    flex: 1;
+}
+
+.queue-info h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.queue-info p {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
 
 /* DOCTOR STATUS CARD */
 .doctor-status-card {
@@ -370,7 +447,7 @@
 
 .doc-status-info p {
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.6);
     margin-top: 4px;
 }
 
@@ -386,12 +463,12 @@
 }
 
 .doc-status-badge.available {
-    background: rgba(34,197,94,0.2);
+    background: rgba(34, 197, 94, 0.2);
     color: #86efac;
 }
 
 .doc-status-badge.busy {
-    background: rgba(239,68,68,0.2);
+    background: rgba(239, 68, 68, 0.2);
     color: #fca5a5;
 }
 
@@ -401,9 +478,22 @@
     margin-left: auto;
 }
 
-.doc-stat-item { text-align: center; }
-.doc-stat-val  { font-size: 1.5rem; font-weight: 900; color: white; display: block; }
-.doc-stat-lbl  { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.doc-stat-item {
+    text-align: center;
+}
+
+.doc-stat-val {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    display: block;
+}
+
+.doc-stat-lbl {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+}
 
 /* EMERGENCY ALERTS */
 .emergency-alert-item {
@@ -412,7 +502,7 @@
     gap: 12px;
     padding: 14px;
     background: linear-gradient(135deg, #FEF2F2, #fff5f5);
-    border: 1px solid rgba(239,68,68,0.2);
+    border: 1px solid rgba(239, 68, 68, 0.2);
     border-left: 4px solid var(--alert);
     border-radius: var(--radius-lg);
     margin-bottom: 10px;
@@ -433,9 +523,21 @@
     animation: live-anim 2s infinite;
 }
 
-.ea-info h4 { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); }
-.ea-info p  { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-.ea-action  { margin-left: auto; }
+.ea-info h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.ea-info p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.ea-action {
+    margin-left: auto;
+}
 
 /* ============================
    ADMIN DASHBOARD SPECIFIC
@@ -552,7 +654,10 @@
     transition: var(--transition);
 }
 
-.resource-card-big:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.resource-card-big:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
 
 .rcb-header {
     display: flex;
@@ -603,22 +708,42 @@
     margin-top: 10px;
 }
 
-.status-available { background: var(--success-bg); color: var(--success); }
-.status-moderate  { background: var(--warning-bg); color: #D97706; }
-.status-full      { background: var(--alert-bg); color: var(--alert); }
+.status-available {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.status-moderate {
+    background: var(--warning-bg);
+    color: #D97706;
+}
+
+.status-full {
+    background: var(--alert-bg);
+    color: var(--alert);
+}
 
 /* ============================
    RESPONSIVE
    ============================ */
 @media (max-width: 1200px) {
-    .admin-metrics { grid-template-columns: repeat(2, 1fr); }
-    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+    .admin-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 900px) {
-    .dash-grid-2 { grid-template-columns: 1fr; }
+    .dash-grid-2 {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .admin-metrics { grid-template-columns: 1fr 1fr; }
+    .admin-metrics {
+        grid-template-columns: 1fr 1fr;
+    }
 }

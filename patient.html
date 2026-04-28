@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthAI | Patient Portal</title>
     <meta name="description" content="Find nearby hospitals, track ambulances, and request emergency help instantly.">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/shared.css">
     <link rel="stylesheet" href="assets/css/patient.css">
 </head>
+=======
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/patient.css">
+    <link rel="stylesheet" href="assets/css/coming-soon.css">
+    <script src="assets/js/theme.js"></script>
+    <script src="config.js"></script>
+    <script src="assets/js/data.js"></script>
+</head>
+
+>>>>>>> origin/main
 <body class="patient-app">
     <!-- Top Bar -->
     <div class="app-topbar">
@@ -20,9 +39,20 @@
             <span class="brand-dot"></span>
             HealthAI
         </div>
+<<<<<<< HEAD
         <button class="app-icon-btn" id="profile-btn" aria-label="Profile">
             <i class="fas fa-user-circle"></i>
         </button>
+=======
+        <div style="display:flex; align-items:center; gap:8px; margin-left:auto;">
+            <button class="app-icon-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <i class="fas fa-moon theme-icon-indicator"></i>
+            </button>
+            <button class="app-icon-btn" id="profile-btn" aria-label="Logout" onclick="HealthAIAuth.logout()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+>>>>>>> origin/main
     </div>
 
     <!-- App Content -->
@@ -31,12 +61,21 @@
         <!-- Greeting + Search -->
         <section class="greeting-section">
             <div class="greeting-text">
+<<<<<<< HEAD
                 <h2>Hello, Arjun <span class="wave">👋</span></h2>
+=======
+                <h2>Hello, <span data-auth-name>Arjun</span> <span class="wave">👋</span></h2>
+>>>>>>> origin/main
                 <p>How are you feeling today?</p>
             </div>
             <div class="search-bar" id="hospital-search-wrap">
                 <i class="fas fa-search"></i>
+<<<<<<< HEAD
                 <input type="text" id="hospital-search" placeholder="Search hospitals, doctors..." aria-label="Search hospitals">
+=======
+                <input type="text" id="hospital-search" placeholder="Search hospitals, doctors..."
+                    aria-label="Search hospitals">
+>>>>>>> origin/main
                 <button class="search-filter-btn" aria-label="Filter">
                     <i class="fas fa-sliders-h"></i>
                 </button>
@@ -77,6 +116,7 @@
                     </div>
                     <span>Ambulance</span>
                 </a>
+<<<<<<< HEAD
                 <a href="tracking.html" class="qa-item" id="qa-track">
                     <div class="qa-icon teal">
                         <i class="fas fa-map-marker-alt"></i>
@@ -94,6 +134,31 @@
                         <i class="fas fa-pills"></i>
                     </div>
                     <span>Prescription</span>
+=======
+                <a href="ai-triage.html" class="qa-item" id="qa-triage">
+                    <div class="qa-icon purple">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span>AI Triage</span>
+                </a>
+                <a href="map.html" class="qa-item" id="qa-map">
+                    <div class="qa-icon teal">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>Live Map</span>
+                </a>
+                <a href="#" class="qa-item coming-soon" id="qa-medid">
+                    <div class="qa-icon blue">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <span>Med ID</span>
+                </a>
+                <a href="tracking.html" class="qa-item" id="qa-track">
+                    <div class="qa-icon" style="background:var(--success-bg);color:var(--success)">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <span>Track</span>
+>>>>>>> origin/main
                 </a>
             </div>
         </section>
@@ -143,7 +208,12 @@
                                 <span class="avail-pct">68%</span>
                             </div>
                             <div class="progress-bar-wrap">
+<<<<<<< HEAD
                                 <div class="progress-bar-fill" style="width:68%;background:linear-gradient(90deg,#22C55E,#16A34A)"></div>
+=======
+                                <div class="progress-bar-fill"
+                                    style="width:68%;background:linear-gradient(90deg,#22C55E,#16A34A)"></div>
+>>>>>>> origin/main
                             </div>
                         </div>
                         <a href="tracking.html" class="btn btn-primary btn-sm">Get Care</a>
@@ -183,7 +253,12 @@
                                 <span class="avail-pct">42%</span>
                             </div>
                             <div class="progress-bar-wrap">
+<<<<<<< HEAD
                                 <div class="progress-bar-fill" style="width:42%;background:linear-gradient(90deg,#14B8A6,#0D9488)"></div>
+=======
+                                <div class="progress-bar-fill"
+                                    style="width:42%;background:linear-gradient(90deg,#14B8A6,#0D9488)"></div>
+>>>>>>> origin/main
                             </div>
                         </div>
                         <a href="tracking.html" class="btn btn-primary btn-sm">Get Care</a>
@@ -223,10 +298,19 @@
                                 <span class="avail-pct">91%</span>
                             </div>
                             <div class="progress-bar-wrap">
+<<<<<<< HEAD
                                 <div class="progress-bar-fill" style="width:91%;background:linear-gradient(90deg,#F97316,#EA580C)"></div>
                             </div>
                         </div>
                         <a href="tracking.html" class="btn btn-sm" style="background:var(--accent-bg);color:var(--accent);">Details</a>
+=======
+                                <div class="progress-bar-fill"
+                                    style="width:91%;background:linear-gradient(90deg,#F97316,#EA580C)"></div>
+                            </div>
+                        </div>
+                        <a href="tracking.html" class="btn btn-sm"
+                            style="background:var(--accent-bg);color:var(--accent);">Details</a>
+>>>>>>> origin/main
                     </div>
                 </div>
 
@@ -263,7 +347,12 @@
                                 <span class="avail-pct" style="color:var(--alert)">100%</span>
                             </div>
                             <div class="progress-bar-wrap">
+<<<<<<< HEAD
                                 <div class="progress-bar-fill" style="width:100%;background:linear-gradient(90deg,#EF4444,#DC2626)"></div>
+=======
+                                <div class="progress-bar-fill"
+                                    style="width:100%;background:linear-gradient(90deg,#EF4444,#DC2626)"></div>
+>>>>>>> origin/main
                             </div>
                         </div>
                         <button class="btn btn-sm" disabled style="opacity:0.5;cursor:not-allowed;">Full</button>
@@ -284,7 +373,12 @@
                         <i class="fas fa-ambulance"></i>
                         <div>
                             <h4>KA-01-Z-1234</h4>
+<<<<<<< HEAD
                             <p>Driver: Rajan Kumar · <i class="fas fa-star" style="color:#F59E0B;font-size:0.7rem"></i> 4.9</p>
+=======
+                            <p>Driver: Rajan Kumar · <i class="fas fa-star" style="color:#F59E0B;font-size:0.7rem"></i>
+                                4.9</p>
+>>>>>>> origin/main
                         </div>
                         <a href="tracking.html" class="btn btn-primary btn-sm">Track</a>
                     </div>
@@ -336,13 +430,33 @@
             <i class="fas fa-map-marker-alt"></i>
             <span>Track</span>
         </a>
+<<<<<<< HEAD
         <a href="#" class="bottom-nav-item" id="nav-profile">
+=======
+        <a href="#" class="bottom-nav-item coming-soon" id="nav-profile">
+>>>>>>> origin/main
             <i class="fas fa-user"></i>
             <span>Profile</span>
         </a>
     </nav>
 
+<<<<<<< HEAD
     <script>
+=======
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/coming-soon.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            HealthAIAuth.guardPage(['patient']);
+            const user = HealthAIAuth.getUser();
+            if (user) {
+                // Get the first name for the greeting
+                const firstName = user.name.split(' ')[0];
+                document.querySelectorAll('[data-auth-name]').forEach(el => el.textContent = firstName);
+            }
+        });
+
+>>>>>>> origin/main
         // Filter hospitals on search
         const searchInput = document.getElementById('hospital-search');
         const hospitalCards = document.querySelectorAll('.hospital-card');
@@ -361,4 +475,9 @@
         });
     </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+</html>
+>>>>>>> origin/main

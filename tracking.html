@@ -10,16 +10,26 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/shared.css">
     <link rel="stylesheet" href="assets/css/patient.css">
     <link rel="stylesheet" href="assets/css/tracking.css">
+=======
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/patient.css">
+    <link rel="stylesheet" href="assets/css/tracking.css">
+>>>>>>> origin/main
 </head>
 
 <body class="patient-app tracking-page">
 
     <!-- Top Bar -->
     <div class="app-topbar tracking-topbar">
+<<<<<<< HEAD
         <a href="patient.html" class="back-btn">
+=======
+        <a href="#" onclick="history.back(); return false;" class="back-btn">
+>>>>>>> origin/main
             <i class="fas fa-arrow-left"></i>
         </a>
         <div class="app-title">
@@ -248,12 +258,24 @@
         </div>
     </main>
 
+<<<<<<< HEAD
     <script>
         // Simulate ambulance moving
+=======
+    <script src="assets/js/auth.js"></script>
+    <script src="config.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            HealthAIAuth.guardPage(['patient']);
+        });
+
+>>>>>>> origin/main
         const ambMarker = document.getElementById('amb-marker');
         const etaTimeVal = document.getElementById('eta-time-val');
         const etaDistVal = document.getElementById('eta-dist-val');
 
+<<<<<<< HEAD
         let eta = 4;
         let dist = 1.8;
         let left = 130;
@@ -273,17 +295,66 @@
             ambMarker.style.bottom = bottom + 'px';
 
             if (eta === 0) {
+=======
+        let totalSeconds = 4 * 60;
+        const totalDist = 1.8;
+
+        const waypoints = [
+            { left: '33%', bottom: '37%' }, { left: '40%', bottom: '42%' },
+            { left: '48%', bottom: '47%' }, { left: '56%', bottom: '50%' },
+            { left: '65%', bottom: '51%' }, { left: '73%', bottom: '54%' },
+            { left: '78%', bottom: '60%' },
+        ];
+        let wpIdx = 0;
+
+        function moveToNextWaypoint() {
+            if (wpIdx < waypoints.length) {
+                const wp = waypoints[wpIdx++];
+                ambMarker.style.transition = 'left 2.5s ease, bottom 2.5s ease';
+                ambMarker.style.left = wp.left;
+                ambMarker.style.bottom = wp.bottom;
+            }
+        }
+        moveToNextWaypoint();
+        const moveInterval = setInterval(moveToNextWaypoint, 35000);
+
+        const ticker = setInterval(() => {
+            totalSeconds = Math.max(0, totalSeconds - 1);
+            const mins = Math.floor(totalSeconds / 60);
+            const secs = totalSeconds % 60;
+            const distRemaining = ((totalSeconds / (4 * 60)) * totalDist).toFixed(1);
+
+            etaTimeVal.textContent = totalSeconds > 60
+                ? `${mins}:${String(secs).padStart(2, '0')}`
+                : totalSeconds > 0 ? `${totalSeconds}s` : 'Arriving!';
+            etaDistVal.textContent = distRemaining > 0 ? `${distRemaining} km` : '< 100 m';
+
+            if (totalSeconds === 0) {
+                clearInterval(ticker);
+>>>>>>> origin/main
                 clearInterval(moveInterval);
                 ambMarker.querySelector('.amb-ping').style.background = 'var(--success)';
                 document.getElementById('ts-3').classList.remove('active');
                 document.getElementById('ts-3').classList.add('done');
                 document.getElementById('ts-4').classList.add('active');
+<<<<<<< HEAD
             }
         }, 3000);
 
         // Cancel button
         document.getElementById('cancel-emergency').addEventListener('click', () => {
             if (confirm('Cancel Emergency? This will cancel your ambulance request.')) {
+=======
+                document.getElementById('ts-4').querySelector('.ts-title').textContent = 'Arrived! ✓';
+                document.getElementById('ts-4').querySelector('.ts-time').textContent = 'Now';
+            }
+        }, 1000);
+
+        document.getElementById('cancel-emergency').addEventListener('click', () => {
+            if (confirm('Cancel Emergency? This will cancel your ambulance request.')) {
+                clearInterval(ticker);
+                clearInterval(moveInterval);
+>>>>>>> origin/main
                 window.location.href = 'patient.html';
             }
         });

@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthAI | Emergency Request</title>
     <meta name="description" content="Request emergency ambulance dispatch with AI-powered severity assessment.">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/shared.css">
     <link rel="stylesheet" href="assets/css/patient.css">
     <link rel="stylesheet" href="assets/css/emergency.css">
 </head>
+=======
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/shared.css">
+    <link rel="stylesheet" href="assets/css/patient.css">
+    <link rel="stylesheet" href="assets/css/emergency.css">
+</head>
+
+>>>>>>> origin/main
 <body class="patient-app emergency-page">
 
     <!-- Top Bar -->
     <div class="app-topbar emergency-topbar">
+<<<<<<< HEAD
         <a href="patient.html" class="back-btn back-light">
+=======
+        <a href="#" onclick="history.back(); return false;" class="back-btn back-light">
+>>>>>>> origin/main
             <i class="fas fa-arrow-left"></i>
         </a>
         <div class="app-title light">
@@ -190,21 +210,42 @@
                     <label>Patient Name</label>
                     <div class="input-with-icon">
                         <i class="fas fa-user"></i>
+<<<<<<< HEAD
                         <input type="text" class="form-control" placeholder="Full name" id="patient-name" value="Arjun Sharma">
+=======
+                        <input type="text" class="form-control" placeholder="Full name" id="patient-name"
+                            value="Arjun Sharma">
+>>>>>>> origin/main
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Age</label>
+<<<<<<< HEAD
                         <input type="number" class="form-control" placeholder="Age" id="patient-age" value="28" min="0" max="120">
+=======
+                        <input type="number" class="form-control" placeholder="Age" id="patient-age" value="28" min="0"
+                            max="120">
+>>>>>>> origin/main
                     </div>
                     <div class="form-group">
                         <label>Blood Group</label>
                         <select class="form-control" id="blood-group">
+<<<<<<< HEAD
                             <option>A+</option><option>A-</option>
                             <option>B+</option><option>B-</option>
                             <option selected>O+</option><option>O-</option>
                             <option>AB+</option><option>AB-</option>
+=======
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option selected>O+</option>
+                            <option>O-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+>>>>>>> origin/main
                         </select>
                     </div>
                 </div>
@@ -212,12 +253,24 @@
                     <label>Contact Number</label>
                     <div class="input-with-icon">
                         <i class="fas fa-phone"></i>
+<<<<<<< HEAD
                         <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" id="contact-num" value="+91 98765 43210">
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Known Allergies / Conditions <span style="color:var(--text-muted);font-weight:400">(Optional)</span></label>
                     <textarea class="form-control" rows="2" placeholder="e.g., Penicillin allergy, Diabetic..." id="conditions"></textarea>
+=======
+                        <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" id="contact-num"
+                            value="+91 98765 43210">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Known Allergies / Conditions <span
+                            style="color:var(--text-muted);font-weight:400">(Optional)</span></label>
+                    <textarea class="form-control" rows="2" placeholder="e.g., Penicillin allergy, Diabetic..."
+                        id="conditions"></textarea>
+>>>>>>> origin/main
                 </div>
                 <div class="location-aware">
                     <div class="location-icon">
@@ -263,7 +316,12 @@
                     <div class="dispatch-info">
                         <h4>Nearest Ambulance Found</h4>
                         <p>KA-01-Z-1234 · 1.2 km away</p>
+<<<<<<< HEAD
                         <span class="badge badge-success"><i class="fas fa-circle" style="font-size:0.4rem"></i> Paramedic on board</span>
+=======
+                        <span class="badge badge-success"><i class="fas fa-circle" style="font-size:0.4rem"></i>
+                            Paramedic on board</span>
+>>>>>>> origin/main
                     </div>
                 </div>
 
@@ -275,7 +333,12 @@
                     </div>
                     <div class="summary-row">
                         <span class="summary-label"><i class="fas fa-tachometer-alt"></i> Severity</span>
+<<<<<<< HEAD
                         <span class="summary-val"><span class="badge badge-warning" id="confirm-severity">Medium</span></span>
+=======
+                        <span class="summary-val"><span class="badge badge-warning"
+                                id="confirm-severity">Medium</span></span>
+>>>>>>> origin/main
                     </div>
                     <div class="summary-row">
                         <span class="summary-label"><i class="fas fa-user"></i> Patient</span>
@@ -291,7 +354,12 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <button type="button" class="btn btn-danger btn-block btn-lg dispatch-btn" id="dispatch-btn" onclick="dispatchAmbulance()">
+=======
+                <button type="button" class="btn btn-danger btn-block btn-lg dispatch-btn" id="dispatch-btn"
+                    onclick="dispatchAmbulance()">
+>>>>>>> origin/main
                     <i class="fas fa-ambulance"></i>
                     Request Ambulance Now
                 </button>
@@ -340,10 +408,26 @@
         </div>
     </main>
 
+<<<<<<< HEAD
+=======
+    <script src="assets/js/auth.js"></script>
+>>>>>>> origin/main
     <script>
         let currentStep = 1;
         const totalSteps = 4;
 
+<<<<<<< HEAD
+=======
+        document.addEventListener('DOMContentLoaded', () => {
+            HealthAIAuth.guardPage(['patient']);
+            const usr = HealthAIAuth.getUser();
+            if (usr && usr.name) {
+                const nameInput = document.getElementById('patient-name');
+                if (nameInput) nameInput.value = usr.name;
+            }
+        });
+
+>>>>>>> origin/main
         function nextStep(step) {
             document.getElementById(`panel-${step}`).classList.remove('active');
             document.getElementById(`fstep-${step}`).classList.remove('active');
@@ -407,4 +491,9 @@
         });
     </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+
+</html>
+>>>>>>> origin/main
